@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════════════════════
+   DANIELA MORAGA — Espacio de Estudio
+   Color System: Jardín Botánico Oriental · Primavera
+   Paleta: Marfil · Lavanda · Rosa Pétalo · Salvia · Beige
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Primario: Lavanda Profunda ── */
+  --color-primary:          #7E6FA0;
+  --color-primary-dark:     #5E5080;
+  --color-primary-light:    #A899C2;
+  --color-primary-subtle:   rgba(240, 237, 247, 0.75);
+
+  /* ── Secundario: Verde Salvia ── */
+  --color-secondary:        #7A9E89;
+  --color-secondary-dark:   #5C7F6A;
+  --color-secondary-light:  #A4C0AE;
+  --color-secondary-subtle: rgba(237, 244, 240, 0.75);
+
+  /* ── Acento: Rosa Pétalo ── */
+  --color-accent:           #C4889C;
+  --color-accent-dark:      #A56B7F;
+  --color-accent-light:     #DEB0BF;
+  --color-accent-subtle:    rgba(250, 240, 243, 0.75);
+
+  /* ── Terciario: Beige Dorado ── */
+  --color-amber:            #C4A882;
+  --color-amber-dark:       #A08A64;
+  --color-amber-light:      #DEC9A8;
+  --color-amber-subtle:     rgba(250, 245, 237, 0.75);
+
+  /* ── Fondos Orgánicos — warm parchment ── */
+  --color-bg:               #F8F4ED;
+  --color-bg-warm:          #F2EAE0;
+  --color-surface:          rgba(253, 251, 247, 0.80);
+  --color-surface-alt:      rgba(242, 234, 224, 0.70);
+  --color-surface-warm:     rgba(250, 243, 232, 0.82);
+  --color-border:           rgba(213, 203, 185, 0.65);
+  --color-border-strong:    rgba(195, 183, 158, 0.80);
+
+  /* ── Texto ── */
+  --color-text-primary:     #2D2820;
+  --color-text-secondary:   #6B6560;
+  --color-text-tertiary:    #9E9891;
+  --color-text-inverse:     #FFFFFF;
+  --color-text-accent:      #7E6FA0;
+
+  /* ── Sombras Suaves con warmth ── */
+  --shadow-1: 0 1px 4px rgba(90,60,40,0.07), 0 1px 2px rgba(90,60,40,0.04);
+  --shadow-2: 0 4px 16px rgba(90,60,40,0.09), 0 2px 6px rgba(90,60,40,0.05);
+  --shadow-3: 0 8px 28px rgba(90,60,40,0.11), 0 4px 10px rgba(90,60,40,0.06);
+  --shadow-4: 0 16px 48px rgba(90,60,40,0.13), 0 8px 20px rgba(90,60,40,0.08);
+  --shadow-glow: 0 0 24px rgba(196,136,156,0.20);
+  --shadow-glass: 0 4px 24px rgba(90,60,40,0.08), inset 0 1px 0 rgba(255,255,255,0.55);
+
+  /* ── Radios ── */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-full: 999px;
+
+  /* ── Colores por Ramo ── */
+  --color-adc:    #7E6FA0;
+  --color-psp:    #C4889C;
+  --color-neu:    #7A9E89;
+  --color-met:    #C4A882;
+  --color-cli:    #7A8EA8;
+  --color-des:    #9AB0A0;
+  --color-soc:    #A899C2;
+}

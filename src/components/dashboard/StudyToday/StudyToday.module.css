@@ -1,0 +1,96 @@
+/* StudyToday.module.css — Glass Edition */
+.panel {
+  background: var(--theme-surface);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--theme-shadow);
+  transition: background 2s ease, border-color 2s ease, box-shadow 2s ease;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--theme-text-primary);
+  margin-bottom: var(--space-4);
+  transition: color 2s ease;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-md);
+  background: var(--theme-surface-alt);
+  backdrop-filter: blur(12px);
+  transition: all var(--duration-base) var(--ease-standard);
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background: var(--theme-surface);
+  border-color: var(--theme-border-strong);
+  box-shadow: var(--theme-glow-hover);
+  transform: translateY(-3px);
+}
+
+.iconWrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 2s ease, color 2s ease;
+}
+
+.iconFC   { background: var(--theme-accent-subtle); color: var(--theme-accent); }
+.iconPDF  { background: var(--theme-primary-subtle); color: var(--theme-primary); }
+.iconQuiz { background: var(--theme-surface-alt); color: var(--theme-secondary); }
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.sugTitle {
+  font-size: var(--text-body);
+  font-weight: var(--fw-semibold);
+  color: var(--theme-text-primary);
+  transition: color 2s ease;
+}
+
+.sugDesc {
+  font-size: var(--text-caption);
+  color: var(--theme-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 2s ease;
+}
+
+.arrow {
+  color: var(--theme-text-secondary);
+  transition: transform var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.suggestion:hover .arrow {
+  color: var(--theme-accent);
+  transform: translateX(3px);
+}

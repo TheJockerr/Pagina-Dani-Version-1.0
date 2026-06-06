@@ -1,0 +1,137 @@
+/* src/components/layout/PageWrapper/PageWrapper.module.css
+   Oriental Garden Layout — glassmorphism · depth · warmth */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* The main content area sits above the fixed garden canvas */
+.main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Transparent — the garden shows through */
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  transition: margin-left var(--duration-base) var(--ease-standard);
+}
+
+.main.fullWidth { margin-left: 0; }
+
+/* ─── Topbar — glassmorphism ─── */
+.topbar {
+  height: var(--header-height);
+  background: var(--theme-topbar-bg, rgba(252, 248, 242, 0.82));
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--theme-border, rgba(231, 222, 192, 0.55));
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-6);
+  gap: var(--space-4);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  flex-shrink: 0;
+  transition: background 2s ease, border-color 2s ease;
+}
+
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+.menuBtn:hover {
+  background: rgba(196,136,156,0.1);
+  color: var(--color-accent);
+}
+
+/* ─── Breadcrumbs ─── */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+.breadcrumb {
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+.breadcrumb:hover { color: var(--color-accent); }
+.breadcrumb.current {
+  color: var(--color-text-primary);
+  font-weight: var(--fw-medium);
+}
+.sep { color: var(--color-border-strong); }
+
+/* ─── Topbar Right ─── */
+.topbarRight {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.searchBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 7px var(--space-3);
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(196,136,156,0.25);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  backdrop-filter: blur(8px);
+}
+.searchBtn:hover {
+  background: rgba(240,237,247,0.8);
+  border-color: rgba(126,111,160,0.4);
+  color: var(--color-primary);
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--color-text-tertiary);
+}
+
+/* ─── Page Content ─── */
+.content {
+  flex: 1;
+  padding: var(--space-8) var(--space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .main { margin-left: 0; }
+  .menuBtn { display: flex; }
+  .content { padding: var(--space-6) var(--space-4); }
+}

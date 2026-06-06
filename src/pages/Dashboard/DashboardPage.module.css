@@ -1,0 +1,196 @@
+/* src/pages/Dashboard/DashboardPage.module.css
+   Oriental Garden Dashboard — glassmorphism · depth · botanical */
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  animation: fadeIn var(--duration-base) var(--ease-standard) both;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--theme-text-primary);
+  letter-spacing: -0.01em;
+  transition: color 2s ease;
+}
+
+.ramosGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+/* ── Glass Ramo Card ── */
+.ramoCard {
+  background: var(--theme-surface);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--theme-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    background var(--duration-base) var(--ease-standard);
+}
+
+/* Botanical leaf watermark indicator */
+.ramoCard::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--theme-accent, var(--color-accent)), var(--accent-color, var(--color-primary)));
+  border-radius: 0 2px 2px 0;
+}
+
+/* Shimmer highlight on hover */
+.ramoCard::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-20deg);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-standard);
+  pointer-events: none;
+}
+
+.ramoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--theme-glow-hover);
+  border-color: var(--theme-border-strong);
+}
+
+.ramoCard:hover::after {
+  opacity: 1;
+  left: 125%;
+  transition: left 0.5s ease;
+}
+
+.ramoHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.ramoTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--theme-text-primary);
+  line-height: 1.2;
+  transition: color 2s ease;
+}
+
+.ramoCode {
+  font-size: var(--text-caption);
+  font-weight: var(--fw-bold);
+  color: var(--theme-accent, var(--accent-color));
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(6px);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  border: 1px solid var(--theme-border);
+  transition: border-color 2s ease, color 2s ease;
+}
+
+.ramoDesc {
+  font-size: var(--text-body);
+  color: var(--theme-text-secondary);
+  line-height: var(--lh-body);
+  transition: color 2s ease;
+}
+
+.ramoFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  border-top: 1px solid var(--theme-border);
+  padding-top: var(--space-4);
+  transition: border-color 2s ease;
+}
+
+.ramoMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-caption);
+  color: var(--theme-text-secondary);
+  transition: color 2s ease;
+}
+
+/* ── Add Ramo Card ── */
+.addRamoCard {
+  background: var(--theme-surface-alt);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px dashed var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  min-height: 180px;
+  transition: all var(--duration-base) var(--ease-standard);
+}
+
+.addRamoCard:hover {
+  border-color: var(--theme-border-strong);
+  color: var(--theme-text-primary);
+  background: var(--theme-surface);
+  transform: translateY(-2px);
+  box-shadow: var(--theme-glow-hover);
+}
+
+.addIcon {
+  font-size: var(--text-display-l);
+  font-weight: var(--fw-light);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .splitGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .ramosGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,122 @@
+/* ═══════════════════════════════════════════════════════
+   DANIELA MORAGA — Espacio de Estudio
+   Typography: Cormorant Garamond (display) + Inter (body)
+   Editorial · Elegante · Sereno · Premium
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Familias Tipográficas ── */
+  --font-display: 'Cormorant Garamond', 'Garamond', Georgia, serif;
+  --font-ui:      'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* ── Tamaños de Fuente ── */
+  --text-display-xl: 52px;
+  --text-display-l:  38px;
+  --text-h1:         30px;
+  --text-h2:         22px;
+  --text-h3:         18px;
+  --text-h4:         15px;
+  --text-body-l:     16px;
+  --text-body:       14px;
+  --text-body-s:     13px;
+  --text-caption:    12px;
+  --text-label:      11px;
+
+  /* ── Alturas de Línea ── */
+  --lh-display:  1.1;
+  --lh-heading:  1.25;
+  --lh-body:     1.65;
+  --lh-relaxed:  1.75;
+  --lh-tight:    1.15;
+
+  /* ── Pesos ── */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  /* ── Espaciado de Letras ── */
+  --ls-label:  0.1em;
+  --ls-tight: -0.02em;
+  --ls-normal: 0em;
+  --ls-display: -0.01em;
+}
+
+/* ── Clases Utilitarias ── */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+.text-display-l {
+  font-family: var(--font-display);
+  font-size: var(--text-display-l);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+}
+
+.text-h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-heading);
+}
+
+.text-h2 {
+  font-family: var(--font-ui);
+  font-size: var(--text-h2);
+  font-weight: var(--fw-semibold);
+  line-height: 1.35;
+}
+
+.text-h3 {
+  font-family: var(--font-ui);
+  font-size: var(--text-h3);
+  font-weight: var(--fw-medium);
+  line-height: 1.4;
+}
+
+.text-h4 {
+  font-family: var(--font-ui);
+  font-size: var(--text-h4);
+  font-weight: var(--fw-medium);
+  line-height: 1.4;
+}
+
+.text-body-l {
+  font-family: var(--font-ui);
+  font-size: var(--text-body-l);
+  line-height: var(--lh-relaxed);
+}
+
+.text-body {
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+}
+
+.text-caption {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+  color: var(--color-text-tertiary);
+}
+
+.text-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+}

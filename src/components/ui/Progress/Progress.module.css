@@ -1,0 +1,26 @@
+/* src/components/ui/Progress/Progress.module.css */
+.wrapper { display: flex; flex-direction: column; gap: var(--space-1); width: 100%; }
+.header { display: flex; align-items: center; justify-content: space-between; }
+.label { font-size: var(--text-caption); color: var(--color-text-secondary); font-weight: var(--fw-medium); }
+.value { font-family: var(--font-mono); font-size: var(--text-caption); font-weight: var(--fw-medium); color: var(--color-text-primary); }
+
+.track {
+  width: 100%;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.sm .track { height: 4px; }
+.md .track { height: 6px; }
+.lg .track { height: 10px; }
+
+.fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s var(--ease-data);
+  background: var(--progress-color, var(--color-primary));
+}
+
+.animated .fill {
+  background: linear-gradient(90deg, var(--progress-color, var(--color-primary)) 0%, color-mix(in srgb, var(--progress-color, var(--color-primary)) 80%, white) 100%);
+}

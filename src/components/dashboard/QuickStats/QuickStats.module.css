@@ -1,0 +1,90 @@
+/* src/components/dashboard/QuickStats/QuickStats.module.css — Glass Edition */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--theme-surface);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--theme-shadow);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    background var(--duration-base) var(--ease-standard);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--theme-glow-hover);
+  border-color: var(--theme-border-strong);
+}
+
+.iconWrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+  transition: background 2s ease, color 2s ease;
+}
+
+.fire { background: var(--theme-accent-subtle, rgba(250,240,243,0.75)); color: var(--theme-accent); }
+.eval { background: var(--theme-surface-alt); color: var(--theme-secondary); }
+.prog { background: var(--theme-primary-subtle, rgba(240,237,247,0.75)); color: var(--theme-primary); }
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--text-caption);
+  color: var(--theme-text-secondary);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  transition: color 2s ease;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--theme-text-primary);
+  margin: 2px 0;
+  transition: color 2s ease;
+}
+
+.subtext {
+  font-size: var(--text-caption);
+  color: var(--theme-text-secondary);
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 2s ease;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}

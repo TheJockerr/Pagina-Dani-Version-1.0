@@ -1,0 +1,216 @@
+/* src/pages/Welcome/WelcomePage.module.css
+   Identidad: Jardín Botánico Oriental · Marfil · Lavanda · Serenidad */
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 15% 85%, rgba(196,168,130,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 15%, rgba(196,136,156,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(126,111,160,0.06) 0%, transparent 70%),
+    #FAF8F5;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Decoraciones Botánicas SVG ─── */
+.botanical {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.petalTopRight {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 340px;
+  height: 340px;
+  opacity: 0.12;
+  color: #C4889C;
+}
+
+.leafBottomLeft {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 300px;
+  height: 300px;
+  opacity: 0.10;
+  color: #7A9E89;
+}
+
+.lotusCenter {
+  position: absolute;
+  bottom: 60px;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  opacity: 0.08;
+  color: #7E6FA0;
+}
+
+/* ─── Splash Phase ─── */
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  animation: fadeIn var(--duration-base) var(--ease-standard) both;
+  z-index: 10;
+}
+
+.splashMonogram {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F0EDF7 0%, #FAF0F3 100%);
+  border: 1.5px solid rgba(196,136,156,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn var(--duration-slow) var(--ease-spring) both;
+  box-shadow: 0 4px 20px rgba(126,111,160,0.12);
+}
+
+.splashMonogramText {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  font-style: italic;
+  color: #7E6FA0;
+  line-height: 1;
+}
+
+.splashDivider {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C4889C, transparent);
+  animation: fadeIn var(--duration-slow) 0.4s both;
+}
+
+.loadingText {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: fadeIn var(--duration-slow) 0.6s both;
+}
+
+/* ─── Welcome Card ─── */
+.welcomeCard {
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(232,228,220,0.8);
+  border-radius: var(--radius-xl);
+  box-shadow:
+    0 2px 8px rgba(45,40,32,0.04),
+    0 16px 48px rgba(45,40,32,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+  padding: 56px 52px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+  z-index: 10;
+  animation: fadeInUp var(--duration-slow) var(--ease-standard) both;
+  backdrop-filter: blur(8px);
+}
+
+/* Thin botanical line accent at top of card */
+.welcomeCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C4889C, #7E6FA0, transparent);
+  border-radius: 0 0 2px 2px;
+}
+
+.flowerIcon {
+  width: 56px;
+  height: 56px;
+  color: #C4889C;
+  opacity: 0.85;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.titleName {
+  color: #7E6FA0;
+  font-style: italic;
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.text {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 400px;
+  font-weight: 400;
+}
+
+.meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.metaDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #C4889C;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.enterBtn {
+  margin-top: 4px;
+}

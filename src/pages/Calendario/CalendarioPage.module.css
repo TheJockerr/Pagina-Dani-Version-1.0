@@ -1,0 +1,168 @@
+/* src/pages/Calendario/CalendarioPage.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  animation: fadeIn var(--duration-base) var(--ease-standard) both;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-s);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+}
+
+.calendarCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-1);
+}
+
+.monthHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.monthTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+}
+
+.dayLabels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: var(--text-caption);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.dayCell {
+  background: var(--color-surface);
+  min-height: 85px;
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  position: relative;
+}
+
+.dayCell.otherMonth {
+  background: var(--color-surface-alt);
+  color: var(--color-text-tertiary);
+}
+
+.dayNum {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-secondary);
+}
+
+.dayCell.today .dayNum {
+  color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.eventBadge {
+  font-size: 9px;
+  font-weight: var(--fw-medium);
+  padding: 2px 4px;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sidebar List */
+.eventsListCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-1);
+  height: fit-content;
+}
+
+.listTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.listItemTitle {
+  font-size: var(--text-body-s);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+.listItemMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}

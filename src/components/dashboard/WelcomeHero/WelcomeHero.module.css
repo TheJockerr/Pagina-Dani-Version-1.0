@@ -1,0 +1,101 @@
+/* WelcomeHero.module.css — Garden Glass Edition */
+
+.hero {
+  background: var(--theme-surface);
+  backdrop-filter: blur(32px) saturate(1.7);
+  -webkit-backdrop-filter: blur(32px) saturate(1.7);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-xl);
+  padding: 36px 44px;
+  box-shadow: var(--theme-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  animation: watercolorReveal 0.7s var(--ease-standard) both;
+  transition: background 2s ease, border-color 2s ease, box-shadow 2s ease;
+}
+
+/* Cinematic glowing background pulse inside the hero card */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 20%, var(--theme-glow) 0%, transparent 60%);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Delicate lotus watermark */
+.hero::after {
+  content: '❀';
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px;
+  color: var(--theme-primary);
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+  transition: color 2s ease;
+  z-index: 0;
+}
+
+.saludo {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--theme-text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
+  transition: color 2s ease;
+}
+
+.saludoName {
+  color: var(--theme-accent);
+  font-weight: 500;
+  transition: color 2s ease;
+}
+
+.subtitulo {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--theme-text-secondary);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 540px;
+  position: relative;
+  z-index: 1;
+  transition: color 2s ease;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--theme-text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  transition: color 2s ease;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--theme-primary);
+  opacity: 0.6;
+  flex-shrink: 0;
+  transition: background 2s ease;
+}

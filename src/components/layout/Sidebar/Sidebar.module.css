@@ -1,0 +1,265 @@
+/* src/components/layout/Sidebar/Sidebar.module.css
+   Identidad: Jardín Académico · Sereno · Lavanda · Salvia */
+
+.sidebar {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  background: var(--theme-surface, rgba(250, 243, 232, 0.88));
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border-right: 1px solid var(--theme-border, rgba(213, 203, 185, 0.50));
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  z-index: 100;
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    background 2s ease,
+    border-color 2s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.08);
+}
+
+.sidebar.collapsed { transform: translateX(calc(-1 * var(--sidebar-width))); }
+
+/* ─── Logo / Identidad ─── */
+.logo {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(126,111,160,0.04) 0%, transparent 100%);
+}
+
+.logoMark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F0EDF7 0%, #FAF0F3 100%);
+  border: 1px solid rgba(196,136,156,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(126,111,160,0.1);
+}
+
+.logoMarkText {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  color: #7E6FA0;
+  line-height: 1;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--theme-text-primary, var(--color-text-primary));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.logoSub {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--theme-text-secondary, var(--color-text-tertiary));
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* ─── Navigation ─── */
+.nav {
+  padding: 16px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.section {
+  padding: 0 12px;
+  margin-top: 16px;
+}
+
+.sectionLabel {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--theme-text-secondary, var(--color-text-tertiary));
+  padding: 0 8px;
+  margin-bottom: 6px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--theme-text-secondary, var(--color-text-secondary));
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: all var(--duration-fast) var(--ease-standard);
+  white-space: nowrap;
+  position: relative;
+}
+
+.navItem:hover {
+  background: rgba(126,111,160,0.06);
+  color: var(--theme-text-primary, var(--color-text-primary));
+}
+
+.navItem.active {
+  background: rgba(126,111,160,0.10);
+  color: var(--theme-accent, #7E6FA0);
+  font-weight: 500;
+}
+
+/* Thin left accent on active item */
+.navItem.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25%;
+  bottom: 25%;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #C4889C, #7E6FA0);
+}
+
+/* ─── Ramo items ─── */
+.ramoItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--theme-text-secondary, var(--color-text-secondary));
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0 12px;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.ramoItem:hover {
+  background: rgba(126,111,160,0.05);
+  color: var(--theme-text-primary, var(--color-text-primary));
+}
+
+.ramoItem.active {
+  color: var(--theme-accent, #7E6FA0);
+  font-weight: 500;
+}
+
+.ramoDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* ─── Ambiance Selector ─── */
+.ambianceSelector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius-md);
+  margin: 12px;
+  border: 1px solid var(--theme-border, rgba(213, 203, 185, 0.3));
+  gap: 4px;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.ambianceTitle {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--theme-text-secondary, var(--color-text-tertiary));
+  font-weight: 500;
+}
+
+.ambianceButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.ambianceBtn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.ambianceBtn:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+.ambianceBtn.active {
+  background: var(--theme-surface, #fff);
+  border-color: var(--theme-border-strong, rgba(196,136,156,0.4));
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transform: scale(1.1);
+}
+
+/* ─── Footer ─── */
+.footer {
+  padding: 12px;
+  border-top: 1px solid var(--theme-border, var(--color-border));
+  flex-shrink: 0;
+  background: linear-gradient(0deg, rgba(196,136,156,0.02) 0%, transparent 100%);
+}
+
+/* ─── Mobile overlay ─── */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(45,40,32,0.25);
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(calc(-1 * var(--sidebar-width))); }
+  .sidebar.open { transform: translateX(0); }
+  .overlay.show { display: block; }
+}
